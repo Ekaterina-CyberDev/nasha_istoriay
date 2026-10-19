@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша история ❤</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffe6ee 0%, #fff5f8 50%, #ffe0ea 100%);
+    color: #4a2c35;
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+  header h1 {
+    font-size: 2.8em;
+    color: #c2185b;
+    margin-bottom: 10px;
+  }
+  header p { font-style: italic; color: #8d5a6b; }
+
+  .timer {
+    background: #fff;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.15);
+  }
+  .timer h2 { font-size: 1.1em; color: #8d5a6b; font-weight: normal; }
+  .timer .days {
+    font-size: 3em;
+    color: #c2185b;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+  section h2 {
+    text-align: center;
+    color: #c2185b;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+  section h2::after {
+    content: "♥";
+    display: block;
+    font-size: 0.6em;
+    margin-top: 5px;
+  }
+
+  /* Галерея */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  .gallery div {
+    background: #fff;
+    border-radius: 15px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4a5b5;
+    font-style: italic;
+    box-shadow: 0 5px 15px rgba(194, 24, 91, 0.1);
+    transition: transform 0.3s;
+  }
+  .gallery div:hover { transform: scale(1.03); }
+
+  /* Списки */
+  ul.goals {
+    list-style: none;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.12);
+  }
+  ul.goals li {
+    padding: 12px 0;
+    border-bottom: 1px dashed #f5c6d5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  ul.goals li:last-child { border-bottom: none; }
+  ul.goals li.done { color: #b0a0a5; text-decoration: line-through; }
+  ul.goals li input { accent-color: #c2185b; width: 18px; height: 18px; }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #a87d8b;
+    font-style: italic;
+    font-size: 0.95em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Наша история ❤</h1>
+  <p>Место, где живёт только наше</p>
+</header>
+
+<div class="timer">
+  <h2>Мы вместе уже</h2>
+  <div class="days" id="days">—</div>
+  <h2>дней</h2>
+</div>
+
+<section>
+  <h2>Наши фото</h2>
+  <div class="gallery">
+    <div>Твоё фото здесь</div>
+    <div>Наше фото здесь</div>
+    <div>Ещё одно фото</div>
+    <div>И ещё одно</div>
+  </div>
+</section>
+
+<section>
+  <h2>Наши мечты</h2>
+  <ul class="goals">
+    <li><input type="checkbox"> Увидеть северное сияние</li>
+    <li><input type="checkbox"> Поехать в Париж вдвоём</li>
+    <li><input type="checkbox" checked class="done"> Приготовить вместе ужин</li>
+    <li><input type="checkbox"> Сделать фотосессию</li>
+    <li><input type="checkbox"> Завести питомца</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Наши цели</h2>
+  <ul class="goals">
+    <li><input type="checkbox"> Накопить на путешествие</li>
+    <li><input type="checkbox"> Выучить язык вместе</li>
+    <li><input type="checkbox"> Сделать ремонт в доме</li>
+  </ul>
+</section>
+
+<footer>
+  Сделано с любовью ✨
+</footer>
+
+<script>
+  // Дата начала отношений — измени на свою!
+  const startDate = new Date("2023-02-14");
+  const today = new Date();
+  const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  document.getElementById("days").textContent = days;
+</script>
+
+</body>
+</html>
